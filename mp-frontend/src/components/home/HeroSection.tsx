@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <Image src="/images/mhaster-probity1.webp" alt="Mhastar Probity College campus" fill priority sizes="100vw" className="object-cover object-center" />
         {/* Lighter blue overlay - reduced from 75% to 45% */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2463]/45 via-[#0A2463]/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2463]/90 via-[#0A2463]/50 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
 
