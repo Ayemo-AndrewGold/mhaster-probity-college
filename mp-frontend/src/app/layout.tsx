@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import GlobalWidgets from "@/components/layout/GlobalWidgets";
 
 
-//type LayoutProps<T extends string> = Readonly<{
+//type LayoutProps<T extends string> = Readonly
 export const metadata: Metadata = {
   title: {
     template: "%s | Mhastar Probity College",
