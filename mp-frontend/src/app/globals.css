@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #1e3a8a;
+  --navy-dark: #152d6e;
+  --navy-light: #2d4faa;
+  --navy-50: #eff4ff;
+  --gold: #f4c430;
+  --gold-dark: #a88716;
+  --gold-light: #f9d96a;
+  --bg: #faf9f6;
+  --surface: #f3f1ed;
+  --ink: #1c1c1c;
+  --ink-muted: #6b6b68;
+  --ink-faint: #8a8a85;
+  --rule: #e4e2dd;
+  --display-font: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --brand-navy: var(--navy);
+  --brand-blue: var(--navy-light);
+  --brand-gold: var(--gold);
+  --brand-red: #a8292f;
+}
+
+@theme inline {
+  --color-primary: var(--navy);
+  --color-primary-dark: var(--navy-dark);
+  --color-accent: var(--gold);
+  --color-accent-dark: var(--gold-dark);
+  --color-text-dark: var(--ink);
+  --color-text-light: var(--ink-muted);
+  --color-background: var(--bg);
+  --color-background-light: var(--surface);
+  --font-sans: var(--font-body);
+  --font-display: var(--display-font);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5 { font-family: var(--display-font); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+p { text-wrap: pretty; }
+main h1 { font-size: clamp(2.75rem, 6vw, 5rem) !important; line-height: 1.08 !important; font-weight: 500 !important; }
+main h2 { font-size: clamp(2rem, 4vw, 3.25rem) !important; line-height: 1.15 !important; font-weight: 500 !important; }
+main h3 { font-size: clamp(1.45rem, 2.5vw, 2rem); font-weight: 500 !important; }
+a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: 3px;
+}
+::selection { color: var(--navy-dark); background: rgb(244 196 48 / 35%); }
+
+/* The school content uses PIN Associate's warm editorial surfaces and rules. */
+main > div > section:not(:first-child), main > section:not(:first-child) { scroll-margin-top: 5rem; }
+main > div > section.bg-white, main > section.bg-white { background-color: var(--bg) !important; }
+main > div > section.bg-gray-50, main > section.bg-gray-50,
+main > div > section[class~="bg-[#f8fafc]"], main > section[class~="bg-[#f8fafc]"] { background-color: var(--surface) !important; }
+main > div > section:first-child [class~="text-[#92600a]"] { color: var(--gold-light) !important; }
+main .rounded-2xl, main .rounded-xl, main .rounded-lg, main .rounded-md { border-radius: 2px !important; }
+main .shadow-sm, main .shadow-md, main .shadow-lg, main .shadow-xl { box-shadow: none !important; }
+main .border-gray-100, main .border-gray-200 { border-color: var(--rule) !important; }
+
+/* Translate the former school palette to the reference's navy and gold system. */
+[class~="text-[#0A2463]"], [class~="text-blue-600"], [class~="text-blue-700"] { color: var(--navy) !important; }
+[class~="bg-[#0A2463]"], [class~="bg-blue-600"], [class~="bg-blue-700"], [class~="bg-blue-800"] { background-color: var(--navy) !important; }
+[class~="bg-[#051733]"] { background-color: var(--navy-dark) !important; }
+[class~="text-amber-500"], [class~="text-amber-600"], [class~="text-amber-700"] { color: var(--gold-dark) !important; }
+[class~="text-amber-400"] { color: var(--gold-light) !important; }
+[class~="bg-amber-500"] { background-color: var(--gold) !important; }
+[class~="hover:bg-amber-600"]:hover { background-color: #d4a820 !important; }
+[class~="border-amber-500"], [class~="border-amber-600"] { border-color: var(--gold) !important; }
+[class~="bg-blue-50"], [class~="bg-blue-100"], [class~="bg-amber-50"], [class~="bg-amber-100"] { background-color: var(--surface) !important; }
+[class~="from-blue-600"], [class~="to-blue-800"] { --tw-gradient-from: var(--navy) !important; --tw-gradient-to: var(--navy) !important; }
+[class~="from-blue-50"], [class~="to-amber-50"] { --tw-gradient-from: var(--surface) !important; --tw-gradient-to: var(--surface) !important; }
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  main h1 { font-size: clamp(2.55rem, 11vw, 3.25rem) !important; }
+  main h2 { font-size: clamp(1.9rem, 8vw, 2.5rem) !important; }
+  main .py-16 { padding-top: 3.75rem; padding-bottom: 3.75rem; }
+  main .text-6xl { font-size: 3rem; line-height: 1.08; }
+  main .text-5xl { font-size: 2.65rem; line-height: 1.1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
